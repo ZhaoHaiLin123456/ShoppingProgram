@@ -1,0 +1,23 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8899
+spring:
+  application:
+    name: service-zuul
+zuul:
+  routes:
+    api-a:
+      path: /shopping-content/**
+      service-id: shopping-content-ms
+    api-b:
+      path: /shopping-manager/**
+      service-id: shopping-manager-ms
+    api-d:
+      path: /shopping-page/**
+      service-id: shopping-page-ms
+    api-e:
+      path: /shopping-search/**
+      service-id: shopping-search-ms
